@@ -1,0 +1,46 @@
+import math
+def area_Del_Circulo(radio):
+    '''
+    Funcion que calcula el area del circulo
+
+    Parametros:
+    ------------
+        radio : float
+
+    Retorna:
+    ------------
+        area : float
+    '''
+    #formula para obtener el area de un circulo
+    area=(radio**2)
+    area = math.pi*area
+    return area
+
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        radio : float
+    '''
+    
+    #ingreso el radio del circulo
+    radio=float(input("Ingrese el radio:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(radio<=0):
+        radio=float(input("Ingrese el radio:"))
+    return (radio)
+    
+if __name__ == '__main__':
+    print("INGRESAR EL RADIO DEL CIRCULO Y CALCULAR SU AREA")
+    #leo radio
+    radio=leer_variables()
+    #llamo a la funcion para obtener el area de un circulo
+    area= area_Del_Circulo(radio)
+    #imprimo el area del circulo
+    print("Area del circulo: ",area)

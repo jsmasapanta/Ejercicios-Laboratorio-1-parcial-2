@@ -1,0 +1,51 @@
+def calcular_Velocidad(distancia,tiempo):
+    '''
+    Funcion que calcula la velocidad 
+
+    Parametros:
+    ------------
+        distancia : float
+        tiempo : float
+
+    Retorna:
+    ------------
+        velocidad : float
+    '''
+    #Fomula para calcular la velocidad v=d/t
+    velocidad = distancia/tiempo
+    return velocidad
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        distancia : float
+        tiempo : float
+    '''
+    #ingreso el valor de la distancia y tiempo
+    distancia=float(input("Ingrese la distancia:"))
+    #while que que permite solo numeros positivos
+    while(distancia<=0):
+        distancia=float(input("Ingrese la distancia:"))
+    tiempo=float(input("Ingrese el tiempo:"))
+    #while que que permite solo numeros positivos
+    while(tiempo<=0):
+        tiempo=float(input("Ingrese el tiempo:"))
+    #retornamos la o las variables
+    
+    return (distancia,tiempo)
+    
+if __name__ == '__main__':
+    print("CALCULAR LA FORMULA DE LA VELOCIDAD")
+    #leemos Distancia y tiempo
+    distancia,tiempo=leer_variables()
+    #llamamos a la funcion para calclular la velocidad
+    velocidad= calcular_Velocidad(distancia,tiempo)
+    #imprimo velocidad
+    print("Velocidad calculada: ",velocidad)
+

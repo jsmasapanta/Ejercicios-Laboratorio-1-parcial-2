@@ -1,0 +1,38 @@
+def saludar(nombre):
+    '''
+    Funcion que saluda al usuario
+
+    Parametros:
+    ------------
+        nombre : str
+
+    Retorna:
+    ------------
+        La funcion no retorna nada
+    '''
+    #Saludando
+    print("Hola", nombre," feliz año")
+    
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        nombre : str
+    '''
+    #ingreso el nombre
+    nombre=input("Ingrese su nombre:")
+    return (nombre)
+    
+if __name__ == '__main__':
+    print("PREGUNTAR AL USUARIO SU NOMBRE Y LO SALUDE CON SU NOMBRE")
+    #leer nombre
+    nombre=leer_variables()
+    #saludo
+    saludar(nombre)
+

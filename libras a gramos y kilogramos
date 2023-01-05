@@ -1,0 +1,47 @@
+def transformar_Libras_A_Gramos_Y_Kilos(libras):
+    '''
+    Funcion que transforma libras a gramos y kilos
+
+    Parametros:
+    ------------
+        libras : float
+
+    Retorna:
+    ------------
+        gramos : float
+        kilos : float
+    '''
+    #libras a gramos
+    gramos = libras*453.6
+    #transformando libras a kilos
+    kilos = libras/2.205
+    return(gramos,kilos)
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        libras : float
+    '''
+    #ingreso la cantidad de libras a transformar
+    libras=float(input("Ingrese cantidad de libras:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(libras<=0):
+        libras=float(input("Ingrese cantidad de libras:"))
+    return (libras)
+    
+if __name__ == '__main__':
+    print("INGRESAR UN VALOR EN LIBRAS Y TRANSFORMARLO A KILOS Y GRAMOS")
+    #Leo un numero
+    libras=leer_variables()
+    #llamos a la funcion para transformar libras a gramos y kilos
+    gramos,kilos=transformar_Libras_A_Gramos_Y_Kilos(libras)
+    #imprimo gramos y kilos
+    print(libras," libras son ", gramos," gramos y ",kilos,"kilos")
+    
+    

@@ -1,0 +1,44 @@
+import math
+def raiz_cuadrada(numero):
+    '''
+    Funcion que calcula la raiz cuadrada de un numero
+
+    Parametros:
+    ------------
+        numero : float
+
+    Retorna:
+    ------------
+        raiz : float
+    '''
+    #Calculando la raiz cuadrada de un numero
+    raiz = math.sqrt(numero)
+    return raiz
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:2
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        no retorna ninguna variable
+    '''
+    #ingreso un numero
+    numero=float(input("Ingrese un numero:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(numero<=0):
+        numero=float(input("Ingrese un numero:"))
+    return (numero)
+    
+if __name__ == '__main__':
+    print("INGRESAR CUALQUIER NUMERO Y CALCULAR SU RAIZ CUADRADA")
+    #leemos un numero
+    numero=leer_variables()
+    #llamamos a la calcular la raiz cuadrada
+    raiz= raiz_cuadrada(numero)
+    #imprimo la raiz cuadrada de un numero
+    print("raiz cuadrada de ",numero,": ",raiz)
+

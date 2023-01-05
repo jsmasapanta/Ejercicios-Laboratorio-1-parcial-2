@@ -1,0 +1,61 @@
+import math
+def arista_Lateral_De_Una_Piramide(tamañoLadosPiramide,alturaPiramide):
+    '''
+    Funcion que calcula la arista lateral de una piramide
+
+    Parametros:
+    ------------
+        tamañoLadosPiramide : float
+        alturaPiramide : float
+
+    Retorna:
+    ------------
+        aristaLateralPiramide : float
+    '''
+    #primero calcular la diagonal y semidiagonal para obtener un dato que se usara en la formula que consigue la arista lateral de una piramide
+    diagonal =(tamañoLadosPiramide**2)+(alturaPiramide**2)
+    diagonal=math.sqrt(diagonal)
+    semiDiagonal = diagonal/2
+    #formula que consigue la arista lateral
+    aristaLateral = math.sqrt((semiDiagonal**2) + (alturaPiramide**2))
+
+    return aristaLateral
+
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        tamañoLadosPiramide : float
+        alturaPiramide : float
+    '''
+    #ingreso el tamaño de los lados del cuadrado de la piramide y su altura
+    tamañoLadosPiramide=float(input("Ingrese el tamaño de los lados de la piramide:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(tamañoLadosPiramide<=0):
+        print("Ingrese numeros positivos!")
+        tamañoLadosPiramide=float(input("Ingrese el tamaño de los lados de la piramide:"))
+
+    #ingreso la altura de la piramide
+    alturaPiramide=float(input("Ingrese la altura de la piramide:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(alturaPiramide<=0):
+        print("Ingrese numeros positivos!")
+        alturaPiramide=float(input("Ingrese la altura de la piramide:"))
+    return (tamañoLadosPiramide,alturaPiramide)
+
+    
+
+if __name__ == '__main__':
+    print("HALLAR LA ARISTA LATERAL DE UNA PIRAMIDE")
+    #leemos variables
+    tamañoLadosPiramide,alturaPiramide=leer_variables()
+    #llamo a la funcion que calcula la arista lateral
+    aristaLateralPiramide=arista_Lateral_De_Una_Piramide(tamañoLadosPiramide,alturaPiramide)
+    #imprimo la arista lateral
+    print("La arita lateral de la piramide es: ",aristaLateralPiramide)

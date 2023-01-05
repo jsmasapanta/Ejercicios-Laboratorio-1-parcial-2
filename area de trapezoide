@@ -1,0 +1,59 @@
+def area_Del_Trapezoide(alturaTrapezoide,baseTrapezoideSuperior,baseTrapezoideInferior):
+    '''
+    Funcion que calcula el area del trapezoide
+
+    Parametros:
+    ------------
+        alturaTrapezoide : float
+        baseTrapezoideSuperior : float
+        baseTrapezoideInferior : float
+
+    Retorna:
+    ------------
+        area : float
+    '''
+    #Forula que resuelve el area del trapezoide
+    suma_de_bases=(baseTrapezoideSuperior+baseTrapezoideInferior)
+    area =((1/2)*alturaTrapezoide)
+    area=area*suma_de_bases
+    return area
+
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        alturaTrapezoide : float
+        baseTrapezoideSuperior : float
+        baseTrapezoideInferior : float
+    '''
+    #ingreso la altura del trapezoide, la base superior y la inferior
+    alturaTrapezoide=float(input("Ingrese altura del trapezoide:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(alturaTrapezoide<=0):
+        alturaTrapezoide=float(input("Ingrese altura del trapezoide:"))
+    
+    baseTrapezoideSuperior=float(input("Ingrese valor de la base superior del trapezoide:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(baseTrapezoideSuperior<=0):
+        baseTrapezoideSuperior=float(input("Ingrese valor de la base superior del trapezoide:"))
+    
+    baseTrapezoideInferior=float(input("Ingrese valor de la base inferior del trapezoide:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(baseTrapezoideInferior<=0):
+        baseTrapezoideInferior=float(input("Ingrese valor de la base inferior del trapezoide:"))
+    return (alturaTrapezoide,baseTrapezoideSuperior,baseTrapezoideInferior)
+    
+if __name__ == '__main__':
+    print("HALLAR EL AREA DEL TRAPEZOIDE")
+    #leemos alturaTrapezoide,baseTrapezoideSuperior,baseTrapezoideInferior
+    alturaTrapezoide,baseTrapezoideSuperior,baseTrapezoideInferior=leer_variables()
+    #llamo a la funcion para calcular el area del trapezoide
+    areaTrapezoide= area_Del_Trapezoide(alturaTrapezoide,baseTrapezoideSuperior,baseTrapezoideInferior)
+    #imprimo el area del trapezoide
+    print("Area del trapezoide: ",areaTrapezoide) 

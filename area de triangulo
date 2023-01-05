@@ -1,0 +1,51 @@
+import math
+def area_triangulo(base,altura):
+    '''
+    Funcion que calcula el area de un triangulo
+
+    Parametros:
+    ------------
+        base : float
+        altura : float
+
+    Retorna:
+    ------------
+        area : float
+    '''
+    #formula para calcular el area de un triangulo
+    area = base*altura
+    area = area/2
+    return area
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        base : float
+        altura : float
+    '''
+    #ingreso base y altura
+    base=float(input("Ingrese la base del triangulo:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(base<=0):
+        base=float(input("Ingrese la base del triangulo:"))
+
+    altura=float(input("Ingrese la altura del triangulo:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(altura<=0):
+        altura=float(input("Ingrese la altura del triangulo:"))
+    return (base,altura)
+    
+if __name__ == '__main__':
+    print("INGRESAR BASE Y ALTURA DE UN TRIANGULO Y HALLAR SU AREA")
+    #leemos base y altura
+    base,altura=leer_variables()
+    #llamamos a lafuncion para calcular la base del triangulo
+    area= area_triangulo(base,altura)
+    #imprimo el area del triangulo
+    print("Area del triangulo: ",area)

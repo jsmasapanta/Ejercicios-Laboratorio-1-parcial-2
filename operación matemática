@@ -1,0 +1,45 @@
+def resolver_Operacion_Aritmetica(a,b):
+    '''
+    Funcion que transforma libras a gramos y kilos
+
+    Parametros:
+    ------------
+        a : float
+        b : float
+
+    Retorna:
+    ------------
+        resultado : float
+    '''
+    #resolviendo la operacion aritmetica
+    resultado = a+(b**2)
+    resultado=resultado/2.5
+    return resultado
+    
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        a : float
+        b : float
+    '''
+    #ingreso el valor de las variables a y b
+    a=float(input("Ingrese el valor de la variable a:"))
+    b=float(input("Ingrese el valor de la variable b:"))
+    return (a,b)
+    
+if __name__ == '__main__':
+    print("MOSTRAR EL RESULTADO DE LA SIGUIENTE OPERACION ARITMETICA: A+B^2 /2.5")
+    #Leo un numero
+    a,b=leer_variables()
+    #llamos a la funcion para resolver la opercion aritmetica
+    resultado=resolver_Operacion_Aritmetica(a,b)
+    #imprimo el resultado de la operacion
+    print("Resultado operacion aritmetica: ",resultado)
+

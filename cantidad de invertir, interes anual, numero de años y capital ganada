@@ -1,0 +1,57 @@
+def calcular_Capital_Por_Años_Obtenido(monto,interes,años):
+    '''
+    Funcion que imprime las ganancias por año.
+
+    Parametros:
+    ------------
+        monto : float
+        interes : float
+        años : int
+
+    Retorna:
+    ------------
+        La funcion no retorna ningun tipo de dato
+    '''
+    #ciclo repetitivo que calcula las ganancias por año
+    for i in range(años):
+        monto = monto*(1 + interes / 100 )
+        print("Capital tras ", i+1," años: ", round(monto, 2))
+
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        monto : float
+        interes : float
+        años : int
+    '''
+    #ingreso el monto de la inversion, el interes y los años
+    monto=float(input("Cantidad de monto a invertir(dolares)?:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(monto<=0):
+        print("Ingrese numeros positivos!")
+        monto=float(input("Cantidad de monto a invertir(dolares)?:"))
+
+    interes=float(input("Cual es el interes porcentual anual?:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(interes<=0):
+        print("Ingrese numeros positivos!")
+        interes=int(input("Cual es el interes porcentual anual?:"))
+
+    años=int(input("Ingrese el numero de años en el que se obtendra ganancias:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(años<=0):
+        print("Ingrese numeros positivos!")
+        interes=int(input("Ingrese el numero de años en el que se obtendra ganancias:"))
+    return (monto,interes,años)
+
+if __name__ == '__main__':
+    monto,interes,años=leer_variables()
+    #llamada a la funcion para calcular el capital obtenido
+    calcular_Capital_Por_Años_Obtenido(monto,interes,años)

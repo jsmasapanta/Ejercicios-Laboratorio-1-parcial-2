@@ -1,0 +1,45 @@
+import math
+def resolver_incognita(x,z):
+    '''
+    Funcion que calcula el area de un triangulo
+
+    Parametros:
+    ------------
+        x : float
+        z : float
+
+    Retorna:
+    ------------
+        y : float
+    '''
+    #resolver incognita [Y=X^2 + Z^2]
+    y = (x**2)+(z**2)
+    return y
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        x : float
+        y : float
+    '''
+    #ingreso X y Y
+    x=float(input("Ingrese X:"))
+    z=float(input("Ingrese z:"))
+    
+    return (x,z)
+    
+if __name__ == '__main__':
+    print("CALCULAR [Y=X^2 + Z^2]")
+    #leemos X y Y
+    x,z=leer_variables()
+    #llamamos a la funcion para resolver la incognita
+    resultado= resolver_incognita(x,z)
+    #imprimo el area del triangulo
+    print("[Y=X^2 + Z^2] resuelta es: ",resultado)
+

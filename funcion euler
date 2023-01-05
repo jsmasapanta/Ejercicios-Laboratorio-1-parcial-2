@@ -1,0 +1,45 @@
+import math
+def funcion_Euler(numero):
+    '''
+    Funcion que calcula euler
+
+    Parametros:
+    ------------
+        numero : float
+
+    Retorna:
+    ------------
+        euler : float
+    '''
+    #calculo euler con la libreria math
+    euler = math.exp(numero)
+    return euler
+
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        numero : float
+    '''
+    #ingreso un numero
+    numero=float(input("Ingrese un numero:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(numero<=0):
+        numero=float(input("Ingrese un numero:"))
+    return (numero)
+    
+if __name__ == '__main__':
+    print("CALCULAR LA ECUACION DE EULER")
+    #Leo un numero
+    numero=leer_variables()
+    #llamo a la funcion para calcular euler
+    euler = funcion_Euler(numero)
+    #imprimo euler
+    print("EULER: ",euler)
+    

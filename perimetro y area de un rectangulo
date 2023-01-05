@@ -1,0 +1,57 @@
+def calcular_Area_Y_Perimetro_De_Un_Rectangulo(largo,ancho):
+    '''
+    Funcion que obtiene el area y perimetro de un rectangulo
+
+    Parametros:
+    ------------
+        largo : float
+        ancho : float
+
+    Retorna:
+    ------------
+        area : float
+        perimetro : float
+    '''
+    #calculando area
+    area=largo*ancho
+    #calculando perimetro
+    perimetro=(largo*2)+(ancho*2)
+    return (area,perimetro)
+
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        largo : float
+        ancho : float
+    '''
+    #ingreso el largo y el ancho del rectangulo
+    largo=float(input("Ingrese el largo del rectangulo:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(largo<=0):
+        print("Solo numeros positivos!")
+        inversion=float(input("Ingrese el largo del rectangulo:"))
+
+    ancho=float(input("Ingrese el ancho del rectangulo:"))
+    #whille que valida que solo se ingrese numeros posivos
+    while(ancho<=0):
+        print("Solo numeros positivos!")
+        ancho=float(input("Ingrese el tamaño del ancho del rectangulo:"))
+    return (largo,ancho)
+
+if __name__ == '__main__':
+    print("HALLAR AREA Y PERIMETRO DE UN RECTANGULO")
+    #leemos variables
+    largo,ancho=leer_variables()
+    #obtengo el valor de area y perimetro
+    area,perimetro=(calcular_Area_Y_Perimetro_De_Un_Rectangulo(largo,ancho))
+    #imprimo area del rectangulo
+    print("El area del rectangulo es: ",area)
+    #imprimo perimetro del rectangulo
+    print("El perimetro del rectangulo es: ",perimetro)

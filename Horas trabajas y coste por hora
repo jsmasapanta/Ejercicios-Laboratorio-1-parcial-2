@@ -1,0 +1,47 @@
+def horas_Trabajadas_por_costo_Hora(horas_trabajadas,costo_por_hora):
+    '''
+    Funcion que obtiene el sueldo de un empleado segun el numero de horas trabajadas y el costo que tiene cada hora trabajada
+
+    Parametros:
+    ------------
+        horas_Trabajadas : int
+        costo_por_Hora : float
+
+    Retorna:
+    ------------
+        sueldo : float
+    '''
+    #Para obtener el sueldo multiplico el numero de horas por las hora que trabajo el empleado
+    sueldo=horas_trabajadas*costo_por_hora
+    return sueldo
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        horas_trabajadas : float
+        coste_por_hora : float
+    '''
+    #ingreso el numero de horas trabajadas
+    horas_trabajadas=int(input("Ingrese horas trabajadas:"))
+    #whille que no permite ingresar numeros negativos
+    while(horas_trabajadas<=0):
+        horas_trabajadas=int(input("Ingrese horas trabajadas:"))
+    #ingreso del coste por hora
+    costo_por_hora=float(input("Ingrese el coste por horas trabajadas:"))
+    #whille que no permite ingresar numeros negativos
+    while(costo_por_hora<=0):
+        costo_por_hora=float(input("Ingrese el coste por horas trabajadas:"))
+    return (horas_trabajadas,costo_por_hora)
+if __name__ == '__main__':
+    #ingreso variables
+    horas_trabajadas,costo_por_hora=leer_variables()
+    #calculo el sueldo con la llamada a la funcion horasTrabajadas_por_costeHora()
+    sueldo=horas_Trabajadas_por_costo_Hora(horas_trabajadas,costo_por_hora)
+    #imprimo el resultado
+    print("El sueldo es: ",sueldo)

@@ -1,0 +1,45 @@
+import math
+def teorema_De_Pitagoras(a,b):
+    '''
+    Funcion que calcula el teorema de pitagoras
+
+    Parametros:
+    ------------
+        a : float
+        b : float
+
+    Retorna:
+    ------------
+        teorema : float
+    '''
+    #Formula para resolver el teorema de pitagoras c^2=a^2+b^2 ---> c=raiz(a^2+b^2)
+    teorema = (a**2)+(b**2)
+    teorema =math.sqrt(teorema)
+    return teorema
+
+def leer_variables():
+    '''
+    Funcion que lee 1 o mas variables dependiendo del usuario
+
+    Parametros:
+    ------------
+        La funcion no tiene parametros
+
+    Retorna:
+    ------------
+        a : float
+        b : float
+    '''
+    #ingreso el valor de la variable a y b
+    a=float(input("Ingrese el valor de la variable a:"))
+    b=float(input("Ingrese el valor de la variable b:"))
+    return (a,b)
+    
+if __name__ == '__main__':
+    print("CALCULAR EL TEOREMA DE PITAGORAS")
+    #leo a y b
+    a,b=leer_variables()
+    #llamo a la funcion que calcula el teorema de pitagoras
+    teorema= teorema_De_Pitagoras(a,b)
+    #imprimo el teorema de pitagoras
+    print("c=raiz(a^2+b^2) es igual a ",teorema)
